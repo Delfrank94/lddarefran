@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://cell.gd" type="Script" id=1]
+[ext_resource path="res://Sin nombre.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 49.5456, 49.0761 )
+
+[node name="Cell" type="Area2D" groups=[
+"cells",
+]]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+value = null
+id = null
+turned_on = false
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+self_modulate = Color( 0, 0, 0, 1 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Animation", "Material", "Offset", "Region", "Transform", "Visibility" ]
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="." index="1"]
+
+visible = false
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+
